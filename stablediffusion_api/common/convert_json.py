@@ -26,10 +26,10 @@ def get_request_body_info(genre: model_genre, model:generate_model) -> dict:
     result = get_all_info(genre, model)
     request_body = result["request_body"].copy()
     
-    request_body["img2img"] = result.get("img2img", False)
-    request_body["txt2img"] = result.get("txt2img", False)
-    
     return request_body
 
 def get_url_info(genre: model_genre ,model: generate_model) -> str:
     return load_config()["stablediffusion"][genre.value][model.value]["url"]
+
+def get_auth_key() -> str:
+    return load_config('user_info.json')["api_key"]

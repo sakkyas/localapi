@@ -1,2 +1,4 @@
 __pycache__/
 venv/
+output/
+stablediffusion_api/user_info.json
